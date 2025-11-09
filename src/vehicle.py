@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Vehicle:
     """
     Vehicle parameters container for constrained steering problem.
@@ -11,20 +12,22 @@ class Vehicle:
         v_max (float): Maximum allowed speed
         l (float): Fixed length of the vector from rear to front wheel
     """
-    def __init__(self, theta_min: float, theta_max: float,
-                 v_min: float, v_max: float, l: float):
+
+    def __init__(
+        self, theta_min: float, theta_max: float, u_min: float, u_max: float, l: float
+    ):
         """
         Initialize the vehicle with steering and velocity constraints.
 
         Args:
             theta_min (float): Minimum steering angle (radians)
             theta_max (float): Maximum steering angle (radians)
-            v_min (float): Minimum speed
-            v_max (float): Maximum speed
+            u_min (float): Minimum speed
+            u_max (float): Maximum speed
             l (float): Length of the vector from rear to front wheel
         """
         self.theta_min: float = theta_min
         self.theta_max: float = theta_max
-        self.v_min: float = v_min
-        self.v_max: float = v_max
+        self.u_min: float = u_min
+        self.u_max: float = u_max
         self.l: float = l
